@@ -1,9 +1,7 @@
-import 'package:carmarket/view/home/bottom_nav.dart';
-import 'package:carmarket/view/login/lets_you_in.dart';
 import 'package:carmarket/view/onboarding/onboardingPage.dart';
-import 'package:carmarket/view/onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,11 +17,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor:Colors.black,
+        scaffoldBackgroundColor: Colors.black,
+        textTheme:
+            GoogleFonts.kaushanScriptTextTheme(Theme.of(context).textTheme),
       ),
       home:
-      //const OnboardingPagee()
-      const OnBoardingPage(),
+          //const OnboardingPagee()
+          const OnBoardingPage(),
       //LetsInPage(),
       //BottomNavBar(),
     );

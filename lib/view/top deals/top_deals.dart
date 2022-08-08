@@ -16,6 +16,7 @@ class TopDeals extends StatefulWidget {
 }
 
 class _TopDealsState extends State<TopDeals> {
+  
   List<String> brands = [
     "All",
     "Mercedes",
@@ -80,7 +81,7 @@ class _TopDealsState extends State<TopDeals> {
                       crossAxisSpacing: 10,
                     ),
                     itemBuilder: (context, index) => CarCard(
-                      ontap: () => DetailsPage(),
+                      ontap: () => Get.to(DetailsPage()),
                     ),
                   ),
                 )

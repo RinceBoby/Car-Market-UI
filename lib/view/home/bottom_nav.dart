@@ -1,5 +1,5 @@
 import 'package:carmarket/core/constants/colors.dart';
-import 'package:carmarket/view/chat/inbox.dart';
+import 'package:carmarket/view/chat/chats.dart';
 import 'package:carmarket/view/home/screen_home.dart';
 import 'package:carmarket/view/orders/orders.dart';
 import 'package:carmarket/view/profile/profile.dart';

@@ -46,10 +46,10 @@ class _ScreenHomeState extends State<ScreenHome> {
               padding: const EdgeInsets.only(left: 15, right: 15),
               sliver: SliverAppBar(
                 backgroundColor: Colors.transparent,
-                floating: false,
-                pinned: false,
+                floating: true,
+                pinned: true,
                 snap: false,
-                expandedHeight: 50,
+                expandedHeight: 145,
                 leading: const CircleAvatar(
                   backgroundColor: kText,
                   radius: 30,
@@ -69,7 +69,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                 ),
                 actions: [
                   GestureDetector(
-                    onTap: () => Get.to(Wishlist()),
+                    onTap: () => Get.to(const Wishlist()),
                     child: CircleAvatar(
                       radius: 15,
                       backgroundColor: Colors.transparent,
@@ -80,36 +80,41 @@ class _ScreenHomeState extends State<ScreenHome> {
                     ),
                   ),
                 ],
-                // flexibleSpace: FlexibleSpaceBar(
-                //   title: TextFormField(
-                //     decoration: InputDecoration(
-                //       border: OutlineInputBorder(
-                //         borderRadius: BorderRadius.circular(10),
-                //         borderSide: BorderSide.none,
-                //       ),
-                //       filled: true,
-                //       fillColor: fieldColor,
-                //       prefixIcon: Icon(
-                //         CupertinoIcons.search,
-                //         color: kText.withOpacity(.6),
-                //       ),
-                //       hintText: "Search",
-                //       hintStyle: TextStyle(
-                //         color: kText.withOpacity(.6),
-                //         fontWeight: FontWeight.w300,
-                //         fontSize: 18,
-                //       ),
-                //       suffixIcon: const Icon(
-                //         CupertinoIcons.slider_horizontal_3,
-                //         color: kWhite,
-                //       ),
-                //     ),
-                //     readOnly: true,
-                //   ),
-                //   centerTitle: true,
-                // ),
+                flexibleSpace: FlexibleSpaceBar(
+                  collapseMode: CollapseMode.pin,
+                  expandedTitleScale: 1,
+                  // titlePadding: EdgeInsetsDirectional.only(start: 0, bottom: 16),
+                  title: TextFormField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide.none,
+                      ),
+                      filled: true,
+                      fillColor: fieldColor,
+                      prefixIcon: Icon(
+                        CupertinoIcons.search,
+                        color: kText.withOpacity(.6),
+                      ),
+                      hintText: "Search",
+                      hintStyle: TextStyle(
+                        color: kText.withOpacity(.6),
+                        fontWeight: FontWeight.w300,
+                        fontSize: 18,
+                      ),
+                      suffixIcon: const Icon(
+                        CupertinoIcons.slider_horizontal_3,
+                        color: kWhite,
+                      ),
+                    ),
+                    readOnly: true,
+                  ),
+                  centerTitle: true,
+                ),
               ),
             ),
+
+            ////
             SliverToBoxAdapter(
               child: ListView(
                 shrinkWrap: true,
@@ -163,32 +168,32 @@ class _ScreenHomeState extends State<ScreenHome> {
                         kHeight10,
 
                         //<<<<<Search>>>>>//
-                        TextFormField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide.none,
-                            ),
-                            filled: true,
-                            fillColor: fieldColor,
-                            prefixIcon: Icon(
-                              CupertinoIcons.search,
-                              color: kText.withOpacity(.6),
-                            ),
-                            hintText: "Search",
-                            hintStyle: TextStyle(
-                              color: kText.withOpacity(.6),
-                              fontWeight: FontWeight.w300,
-                              fontSize: 18,
-                            ),
-                            suffixIcon: const Icon(
-                              CupertinoIcons.slider_horizontal_3,
-                              color: kWhite,
-                            ),
-                          ),
-                          readOnly: true,
-                        ),
-                        kHeight20,
+                        // TextFormField(
+                        //   decoration: InputDecoration(
+                        //     border: OutlineInputBorder(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //       borderSide: BorderSide.none,
+                        //     ),
+                        //     filled: true,
+                        //     fillColor: fieldColor,
+                        //     prefixIcon: Icon(
+                        //       CupertinoIcons.search,
+                        //       color: kText.withOpacity(.6),
+                        //     ),
+                        //     hintText: "Search",
+                        //     hintStyle: TextStyle(
+                        //       color: kText.withOpacity(.6),
+                        //       fontWeight: FontWeight.w300,
+                        //       fontSize: 18,
+                        //     ),
+                        //     suffixIcon: const Icon(
+                        //       CupertinoIcons.slider_horizontal_3,
+                        //       color: kWhite,
+                        //     ),
+                        //   ),
+                        //   readOnly: true,
+                        // ),
+                        // kHeight20,
 
                         //<<<<<Brands>>>>>//
                         Wrap(

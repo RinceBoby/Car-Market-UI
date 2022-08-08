@@ -6,15 +6,15 @@ import '../../core/constants/dimensions.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     Key? key,
-    required this.leadIcon,
-    required this.leadOnTap,
+    this.leadIcon,
+    this.leadOnTap,
     this.title,
     this.trailIcon,
     this.trailOnTap,
   }) : super(key: key);
 
-  final IconData leadIcon;
-  final VoidCallback leadOnTap;
+  final IconData? leadIcon;
+  final VoidCallback? leadOnTap;
   final String? title;
   final IconData? trailIcon;
   final VoidCallback? trailOnTap;
@@ -36,7 +36,7 @@ class CustomAppBar extends StatelessWidget {
                   color: kText,
                 ),
               ),
-              kWidth20,
+              kWidth25,
               Text(
                 title!,
                 style: const TextStyle(

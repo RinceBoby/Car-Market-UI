@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../core/constants/colors.dart';
@@ -77,7 +78,7 @@ class _CarCardState extends State<CarCard> {
                     letterSpacing: 1,
                   ),
                 ),
-                kHeight10,
+                kHeight05,
     
                 //<<<<<Rating>>>>>//
                 Row(
@@ -91,6 +92,7 @@ class _CarCardState extends State<CarCard> {
                         allowHalfRating: true,
                         itemCount: 5,
                         itemSize: 15,
+                        unratedColor: fieldColor,
                         itemPadding: const EdgeInsets.only(right: 4),
                         itemBuilder: (context, index) => const Icon(
                           CupertinoIcons.star_fill,
@@ -110,7 +112,7 @@ class _CarCardState extends State<CarCard> {
                     ),
                   ],
                 ),
-                kHeight10,
+                kHeight05,
     
                 //<<<<<Price>>>>>//
                 const Text(

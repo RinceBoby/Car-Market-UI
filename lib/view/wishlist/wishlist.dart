@@ -31,7 +31,7 @@ class Wishlist extends StatelessWidget {
                     trailOnTap: () {},
                   ),
                 ),
-        
+
                 //<<<<<Car_List>>>>>//
                 Padding(
                   padding: const EdgeInsets.only(left: 5),
@@ -42,10 +42,11 @@ class Wishlist extends StatelessWidget {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: 1.1 / 1.5,
                       crossAxisSpacing: 10,
-                      crossAxisCount: (orientation == Orientation.portrait) ? 2 : 4,
+                      crossAxisCount:
+                          (orientation == Orientation.portrait) ? 2 : 4,
                     ),
                     itemBuilder: (context, index) => CarCard(
-                      ontap: () => DetailsPage(),
+                      ontap: () => Get.to(DetailsPage()),
                     ),
                   ),
                 )

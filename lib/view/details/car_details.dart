@@ -1,5 +1,6 @@
 import 'package:carmarket/core/constants/colors.dart';
 import 'package:carmarket/core/constants/dimensions.dart';
+import 'package:carmarket/view/offer/make_an_offer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -101,8 +102,21 @@ class DetailsPage extends StatelessWidget {
                                 ],
                               ),
                               const Spacer(),
+
+                              ////
                               GestureDetector(
-                                onTap: () => Get.to(Wishlist()),
+                                onTap: () {},
+                                child: const Icon(
+                                  CupertinoIcons.chat_bubble_text,
+                                  color: kText,
+                                  size: 32,
+                                ),
+                              ),
+                              kWidth20,
+
+                              //<<<<<Fav_Icon>>>>>//
+                              GestureDetector(
+                                onTap: () => Get.to(const Wishlist()),
                                 child: CircleAvatar(
                                   radius: 15,
                                   backgroundColor: Colors.transparent,
@@ -112,7 +126,7 @@ class DetailsPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              kWidth20,
+                              // kWidth10,
                             ],
                           ),
                           kHeight15,
@@ -172,121 +186,66 @@ class DetailsPage extends StatelessWidget {
                               itemBuilder: (context, index) => GalleryPhoto(),
                             ),
                           ),
-
-                          Container(
-                            height: 100,
-                            color: kRed,
-                          ),
                         ],
                       ),
                     ),
-
-                    //<<<<<Bottom_Bar>>>>>//
-                    // Align(
-                    //   alignment: Alignment.bottomCenter,
-                    //   child: Padding(
-                    //     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    //     child: Container(
-                    //       color: kBlack,
-                    //       height: 60,
-                    //       child: Row(
-                    //         children: [
-                    //           //<<<<<Price>>>>>//
-                    //           Column(
-                    //             crossAxisAlignment: CrossAxisAlignment.start,
-                    //             children: const [
-                    //               Text(
-                    //                 "Price",
-                    //                 style: TextStyle(
-                    //                   color: kText,
-                    //                   fontSize: 16,
-                    //                 ),
-                    //               ),
-                    //               Text(
-                    //                 "₹ 12.2 L",
-                    //                 style: TextStyle(
-                    //                   color: kText,
-                    //                   fontWeight: FontWeight.bold,
-                    //                   fontSize: 28,
-                    //                 ),
-                    //               ),
-                    //             ],
-                    //           ),
-                    //           const Spacer(),
-
-                    //           //<<<<<Make_an_Offer>>>>>//
-                    //           ElevatedButton(
-                    //             onPressed: () {},
-                    //             style: ElevatedButton.styleFrom(
-                    //                 primary: kWhite,
-                    //                 shape:
-                    //                     RoundedRectangleBorder(borderRadius: kRadius30),
-                    //                 fixedSize: Size(size.width * .5, 50)),
-                    //             child: const Text(
-                    //               "Make an Offer",
-                    //               style: TextStyle(
-                    //                 fontSize: 18,
-                    //                 color: kBlack,
-                    //               ),
-                    //             ),
-                    //           ),
-                    //         ],
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
             ),
+
+            //<<<<<Bottom_Bar>>>>>//
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
-                  color: kBlack,
-                  height: 60,
-                  child: Row(
-                    children: [
-                      //<<<<<Price>>>>>//
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            "Price",
-                            style: TextStyle(
-                              color: kText,
-                              fontSize: 16,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+                  child: Container(
+                    color: kBlack,
+                    height: 60,
+                    child: Row(
+                      children: [
+                        //<<<<<Price>>>>>//
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Price",
+                              style: TextStyle(
+                                color: kText,
+                                fontSize: 16,
+                              ),
                             ),
-                          ),
-                          Text(
-                            "₹ 12.2 L",
-                            style: TextStyle(
-                              color: kText,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 28,
+                            Text(
+                              "₹ 12.2 L",
+                              style: TextStyle(
+                                color: kText,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
+                          ],
+                        ),
+                        const Spacer(),
 
-                      //<<<<<Make_an_Offer>>>>>//
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: kWhite,
-                            shape:
-                                RoundedRectangleBorder(borderRadius: kRadius30),
-                            fixedSize: Size(size.width * .5, 50)),
-                        child: const Text(
-                          "Make an Offer",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: kBlack,
+                        //<<<<<Make_an_Offer>>>>>//
+                        ElevatedButton(
+                          onPressed: () => Get.to(const MakeAnOffer()),
+                          style: ElevatedButton.styleFrom(
+                              primary: kWhite,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: kRadius30),
+                              fixedSize: Size(size.width * .5, 50)),
+                          child: const Text(
+                            "Make an Offer",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: kBlack,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
