@@ -1,7 +1,8 @@
 import 'package:carmarket/core/constants/colors.dart';
 import 'package:carmarket/view/chat/chats.dart';
+import 'package:carmarket/view/home/screenHome.dart';
 import 'package:carmarket/view/home/screen_home.dart';
-import 'package:carmarket/view/orders/orders.dart';
+import 'package:carmarket/view/orders/screen_orders.dart';
 import 'package:carmarket/view/profile/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

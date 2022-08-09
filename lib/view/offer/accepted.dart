@@ -1,14 +1,13 @@
 import 'package:carmarket/core/constants/colors.dart';
 import 'package:carmarket/core/constants/dimensions.dart';
-import 'package:carmarket/view/home/bottom_nav.dart';
-import 'package:carmarket/view/offer/accepted.dart';
+import 'package:carmarket/view/checkout/check_out.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-class OfferProcessed extends StatelessWidget {
-  const OfferProcessed({Key? key}) : super(key: key);
+class OfferAccepted extends StatelessWidget {
+  const OfferAccepted({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +23,15 @@ class OfferProcessed extends StatelessWidget {
           ),
         ),
         title: const Text(
-          "Make an Offer",
+          "Your offer",
           style: TextStyle(
-            color: kText,
             fontSize: 26,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
 
-      //<<<<<Processed>>>>>//
+      //<<<<<Accepted>>>>>//
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -41,61 +39,49 @@ class OfferProcessed extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               kHeight75,
-              //<<<<<Lotiee>>>>>//
               SizedBox(
                 height: 200,
                 width: size.width,
-                child: Lottie.asset("assets/processing2.json"),
+                child: Lottie.asset("assets/accepted.json"),
               ),
               kHeight20,
-
-              //<<<<<Title>>>>>//
               const Text(
-                "Your offer is being\nprocessed..",
+                "Congrats!\nYour offer has been accepted!",
                 style: TextStyle(
-                  fontSize: 26,
                   color: kWhite,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
               ),
               kHeight40,
-
-              //<<<<<Text>>>>>//
-              const SizedBox(
-                child: Text(
-                  "Please check the messages to see if your offer is being accepted or not!",
-                  style: TextStyle(
-                    color: kText,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w300,
-                  ),
-                  textAlign: TextAlign.center,
+              const Text(
+                "Your offer has been accepted by the dealer for\n₹ 12 L",
+                style: TextStyle(
+                  color: kText,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w300,
                 ),
+                textAlign: TextAlign.center,
               ),
               kHeight150,
-
-              //<<<<<Button>>>>>//
               ElevatedButton(
-                onPressed: () => Get.to(
-                  OfferAccepted(),
-                  // BottomNavBar(),
-                ),
+                onPressed: () => Get.to(const CheckoutItem()),
                 style: ElevatedButton.styleFrom(
                   primary: kWhite,
-                  shape: RoundedRectangleBorder(borderRadius: kRadius30),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: kRadius30,
+                  ),
                   fixedSize: Size(size.width * .9, 50),
                 ),
                 child: const Text(
-                  "Back to Home..",
+                  "Proceed to checkout!",
                   style: TextStyle(
                     color: kBlack,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
                   ),
                 ),
               ),
-              kHeight30,
             ],
           ),
         ),

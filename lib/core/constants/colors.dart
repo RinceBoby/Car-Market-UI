@@ -8,3 +8,4 @@ const kRed = Colors.red;
 const kStar = Colors.amber;
 const fieldColor = Color.fromARGB(255, 38, 37, 37);
 const kText = Color.fromARGB(255, 191, 184, 184);
+const kTrans = Colors.transparent;
