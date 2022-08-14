@@ -1,5 +1,6 @@
 import 'package:carmarket/core/constants/colors.dart';
 import 'package:carmarket/core/constants/dimensions.dart';
+import 'package:carmarket/view/home/bottom_nav.dart';
 import 'package:carmarket/view/login/lets_you_in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -132,13 +133,15 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     ],
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          "Skip..",
+                        onTap: () => Get.to(const LetsInPage()),
+                        child: const Text(
+                          "Skip",
                           style: TextStyle(
-                            color: kText,
+                            color: Colors.grey,
+                            fontSize: 18,
                           ),
                         ),
                       ),
