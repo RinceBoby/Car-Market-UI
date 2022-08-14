@@ -1,6 +1,6 @@
 import 'package:carmarket/core/constants/colors.dart';
 import 'package:carmarket/view/chat/chats.dart';
-import 'package:carmarket/view/home/screenHome.dart';
+import 'package:carmarket/view/home/screen_home.dart';
 import 'package:carmarket/view/home/screen_home.dart';
 import 'package:carmarket/view/orders/screen_orders.dart';
 import 'package:carmarket/view/profile/profile.dart';
@@ -19,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _currentSelectedIndex = 0;
 
   final _pages = [
-    ScreenHome(),
+    const ScreenHome(),
     const Orders(),
     const Inbox(),
     const Profile(),

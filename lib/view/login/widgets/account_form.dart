@@ -1,12 +1,11 @@
-import 'package:carmarket/view/login/login_account.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/dimensions.dart';
 import 'line_text.dart';
 
+// ignore: must_be_immutable
 class AccountForm extends StatelessWidget {
   AccountForm({
     Key? key,
@@ -152,7 +151,7 @@ class AccountForm extends StatelessWidget {
           child: Text(
             btnTxt,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 20,
               color: btnTextColor,
             ),
           ),

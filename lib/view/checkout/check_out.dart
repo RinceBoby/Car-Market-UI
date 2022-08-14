@@ -270,7 +270,7 @@ class CheckoutItem extends StatelessWidget {
                 //<<<<<Payment_Button>>>>>//
                 Center(
                   child: ElevatedButton(
-                    onPressed: () => Get.to(OrderSuccessful()),
+                    onPressed: () => Get.to(const OrderSuccessful()),
                     style: ElevatedButton.styleFrom(
                       primary: kWhite,
                       shape: RoundedRectangleBorder(
@@ -283,7 +283,7 @@ class CheckoutItem extends StatelessWidget {
                       style: TextStyle(
                         color: kBlack,
                         fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),

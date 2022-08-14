@@ -20,7 +20,7 @@ class LoginAccount extends StatelessWidget {
             forgetTxt: "Forget the Password?",
             acStatus: "Don't have an account?",
             signInorUp: "Sign Up",
-            logPage: () => Get.offAll(const CreateAccount()),
+            logPage: () => Get.offAll(CreateAccount()),
             page: () {
               Get.off(BottomNavBar());
             },

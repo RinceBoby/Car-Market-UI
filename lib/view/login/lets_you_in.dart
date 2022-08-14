@@ -95,7 +95,7 @@ class LetsInPage extends StatelessWidget {
                   child: const Text(
                     "Sign in with password",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       color: kBlack,
                     ),
                   ),
@@ -115,7 +115,7 @@ class LetsInPage extends StatelessWidget {
                     kWidth10,
                     GestureDetector(
                       onTap: () {
-                        Get.to(const CreateAccount());
+                        Get.to( CreateAccount());
                       },
                       child:
                           const FieldText(text: "Sign up", textColor: kWhite),

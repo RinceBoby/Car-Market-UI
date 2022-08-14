@@ -93,7 +93,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               width: 55,
                             )
                           : FloatingActionButton(
-                            heroTag: "btn1",
+                              heroTag: "btn1",
                               onPressed: () {
                                 _pageController.previousPage(
                                   duration: const Duration(milliseconds: 300),
@@ -129,6 +129,19 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             color: kBlack),
                       ),
                       kWidth20,
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "Skip..",
+                          style: TextStyle(
+                            color: kText,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   kHeight40,

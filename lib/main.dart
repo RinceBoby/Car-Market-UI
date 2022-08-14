@@ -1,3 +1,5 @@
+import 'package:carmarket/view/home/bottom_nav.dart';
+import 'package:carmarket/view/home/screen_home.dart';
 import 'package:carmarket/view/onboarding/onboardingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,11 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.black,
         textTheme:
-            GoogleFonts.kaushanScriptTextTheme(Theme.of(context).textTheme),
+            GoogleFonts.philosopherTextTheme(Theme.of(context).textTheme),
       ),
-      home:
-          //const OnboardingPagee()
-          const OnBoardingPage(),
+      home: const OnBoardingPage(),
+      //BottomNavBar(),
       //LetsInPage(),
       //BottomNavBar(),
     );

@@ -78,7 +78,8 @@ class OfferAccepted extends StatelessWidget {
                   "Proceed to checkout!",
                   style: TextStyle(
                     color: kBlack,
-                    fontSize: 24,
+                    fontSize: 20,
+                    // fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

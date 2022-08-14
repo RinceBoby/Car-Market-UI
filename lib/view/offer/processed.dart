@@ -78,7 +78,7 @@ class OfferProcessed extends StatelessWidget {
               //<<<<<Button>>>>>//
               ElevatedButton(
                 onPressed: () => Get.to(
-                  OfferAccepted(),
+                  const OfferAccepted(),
                   // BottomNavBar(),
                 ),
                 style: ElevatedButton.styleFrom(
@@ -87,11 +87,10 @@ class OfferProcessed extends StatelessWidget {
                   fixedSize: Size(size.width * .9, 50),
                 ),
                 child: const Text(
-                  "Back to Home..",
+                  "Back to Home",
                   style: TextStyle(
                     color: kBlack,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
                   ),
                 ),
               ),

@@ -82,8 +82,7 @@ class MakeAnOffer extends StatelessWidget {
                     "Send Offer",
                     style: TextStyle(
                       color: kBlack,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
                     ),
                   ),
                 ),

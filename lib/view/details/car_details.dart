@@ -239,7 +239,7 @@ class DetailsPage extends StatelessWidget {
                           child: const Text(
                             "Make an Offer",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 20,
                               color: kBlack,
                             ),
                           ),
