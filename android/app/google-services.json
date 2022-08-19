@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "896966251490",
+    "project_id": "carmarket-7571",
+    "storage_bucket": "carmarket-7571.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896966251490:android:6e2e1a7686cab311a81fbb",
+        "android_client_info": {
+          "package_name": "com.example.carmarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896966251490-6ais1o7ispdi4sd1n89t7gdsm0lfbil7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Fx6UQdJeUe6dZzTLaVwhPYr8EhAO1Io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896966251490-6ais1o7ispdi4sd1n89t7gdsm0lfbil7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/dimensions.dart';
-import 'widgets/account_form.dart';
 import 'widgets/line_text.dart';
 
 class CreateAccount extends StatelessWidget {
@@ -83,6 +82,7 @@ class CreateAccount extends StatelessWidget {
                               return null;
                             }
                           },
+                          style: const TextStyle(color: kWhite),
                           controller: emailController,
                           decoration: InputDecoration(
                             labelText: "Email",
@@ -115,6 +115,7 @@ class CreateAccount extends StatelessWidget {
                               return null;
                             }
                           },
+                          style: const TextStyle(color: kWhite),
                           controller: passController,
                           decoration: InputDecoration(
                             labelText: "Password",
@@ -150,6 +151,7 @@ class CreateAccount extends StatelessWidget {
                               return null;
                             }
                           },
+                          style: const TextStyle(color: kWhite),
                           controller: passController,
                           decoration: InputDecoration(
                             labelText: "Confirm Password",

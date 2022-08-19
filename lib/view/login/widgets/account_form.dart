@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,7 @@ import '../../../core/constants/dimensions.dart';
 import 'line_text.dart';
 
 // ignore: must_be_immutable
-class AccountForm extends StatelessWidget {
+class AccountForm extends StatefulWidget {
   AccountForm({
     Key? key,
     required this.title,
@@ -15,15 +16,9 @@ class AccountForm extends StatelessWidget {
     required this.signInorUp,
     required this.btnColor,
     required this.btnTextColor,
-    required this.page,
     required this.logPage,
     this.forgetTxt,
   }) : super(key: key);
-
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passController = TextEditingController();
-
-  final _formKey = GlobalKey<FormState>();
 
   final String title;
   final String btnTxt;
@@ -32,8 +27,26 @@ class AccountForm extends StatelessWidget {
   final Color btnColor;
   final Color btnTextColor;
   final String? forgetTxt;
-  VoidCallback page;
+
   VoidCallback logPage;
+
+  @override
+  State<AccountForm> createState() => _AccountFormState();
+}
+
+class _AccountFormState extends State<AccountForm> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +67,7 @@ class AccountForm extends StatelessWidget {
 
         //<<<<<Title>>>>>//
         Text(
-          title,
+          widget.title,
           style: const TextStyle(
             fontSize: 35,
             fontWeight: FontWeight.w500,
@@ -71,18 +84,8 @@ class AccountForm extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
-                  validator: (value) {
-                    Pattern pattern =
-                        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                    RegExp regex = RegExp(pattern.toString());
-                    if (value!.isEmpty) {
-                      return "Required Field";
-                    } else if (!regex.hasMatch(value)) {
-                      return "Enter a valid email";
-                    } else {
-                      return null;
-                    }
-                  },
+                  style: const TextStyle(color: kWhite),
+                  textInputAction: TextInputAction.next,
                   controller: emailController,
                   decoration: InputDecoration(
                     labelText: "Email",
@@ -102,18 +105,8 @@ class AccountForm extends StatelessWidget {
                 ),
                 kHeight15,
                 TextFormField(
-                  validator: (value) {
-                    Pattern pattern =
-                        r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
-                    RegExp regex = RegExp(pattern.toString());
-                    if (value!.isEmpty) {
-                      return "Required Field";
-                    } else if (!regex.hasMatch(value)) {
-                      return "Enter a valid password";
-                    } else {
-                      return null;
-                    }
-                  },
+                  style: const TextStyle(color: kWhite),
+                  obscureText: true,
                   controller: passController,
                   decoration: InputDecoration(
                     labelText: "Password",
@@ -142,17 +135,17 @@ class AccountForm extends StatelessWidget {
 
         //<<<<<Button>>>>>//
         ElevatedButton(
-          onPressed: page,
+          onPressed: signIn,
           style: ElevatedButton.styleFrom(
-            primary: btnColor,
+            primary: widget.btnColor,
             shape: RoundedRectangleBorder(borderRadius: kRadius30),
             fixedSize: Size(size.width * .9, 50),
           ),
           child: Text(
-            btnTxt,
+            widget.btnTxt,
             style: TextStyle(
               fontSize: 20,
-              color: btnTextColor,
+              color: widget.btnTextColor,
             ),
           ),
         ),
@@ -160,7 +153,7 @@ class AccountForm extends StatelessWidget {
 
         //<<<<<Forget>>>>>//
         Text(
-          forgetTxt!,
+          widget.forgetTxt!,
           style: const TextStyle(
             color: kWhite,
             fontSize: 16,
@@ -204,7 +197,7 @@ class AccountForm extends StatelessWidget {
           children: [
             // ignore: prefer_const_constructors
             Text(
-              acStatus,
+              widget.acStatus,
               style: const TextStyle(
                 color: kGrey,
                 fontWeight: FontWeight.w100,
@@ -214,9 +207,9 @@ class AccountForm extends StatelessWidget {
             kWidth10,
 
             GestureDetector(
-              onTap: logPage,
+              onTap: widget.logPage,
               child: Text(
-                signInorUp,
+                widget.signInorUp,
                 style: const TextStyle(
                   color: kWhite,
                   fontWeight: FontWeight.w400,
@@ -228,5 +221,22 @@ class AccountForm extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  //
+  //
+  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Method>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+  //
+  //
+  //<<<<<User_Auth_Firebase>>>>>//
+  Future signIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passController.text.trim(),
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
   }
 }

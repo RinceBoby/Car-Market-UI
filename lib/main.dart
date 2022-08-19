@@ -1,11 +1,12 @@
-import 'package:carmarket/view/home/bottom_nav.dart';
-import 'package:carmarket/view/home/screen_home.dart';
 import 'package:carmarket/view/onboarding/onboardingPage.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

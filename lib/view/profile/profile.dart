@@ -2,6 +2,7 @@ import 'package:carmarket/core/constants/colors.dart';
 import 'package:carmarket/core/constants/dimensions.dart';
 import 'package:carmarket/view/address/address.dart';
 import 'package:carmarket/view/profile/profile_form.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -129,22 +130,26 @@ class Profile extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10),
-                                  child: Row(
-                                    children: const [
-                                      Icon(
-                                        CupertinoIcons.square_arrow_left,
-                                        color: kText,
-                                        size: 30,
-                                      ),
-                                      kWidth25,
-                                      Text(
-                                        "Logout",
-                                        style: TextStyle(
-                                          color: kRed,
-                                          fontSize: 22,
+                                  child: GestureDetector(
+                                    onTap: () =>
+                                        FirebaseAuth.instance.signOut(),
+                                    child: Row(
+                                      children: const [
+                                        Icon(
+                                          CupertinoIcons.square_arrow_left,
+                                          color: kText,
+                                          size: 30,
                                         ),
-                                      ),
-                                    ],
+                                        kWidth25,
+                                        Text(
+                                          "Logout",
+                                          style: TextStyle(
+                                            color: kRed,
+                                            fontSize: 22,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

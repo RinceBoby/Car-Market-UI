@@ -1,4 +1,5 @@
 import 'package:carmarket/view/search/search.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,6 +40,7 @@ class _ScreenHomeState extends State<ScreenHome> {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     final orientation = MediaQuery.of(context).orientation;
     final size = MediaQuery.of(context).size;
 
@@ -204,14 +206,15 @@ class _ScreenHomeState extends State<ScreenHome> {
   //
   //<<<<<App_Bar>>>>>//
   SliverAppBar HomeSliverAppBar() {
+    final user = FirebaseAuth.instance.currentUser!;
     return SliverAppBar(
       backgroundColor: Colors.transparent,
       floating: true,
       pinned: true,
       automaticallyImplyLeading: false,
       title: Row(
-        children: const [
-          CircleAvatar(
+        children: [
+          const CircleAvatar(
             backgroundColor: kWhite,
             radius: 27,
             child: CircleAvatar(
@@ -222,8 +225,8 @@ class _ScreenHomeState extends State<ScreenHome> {
           ),
           kWidth15,
           Text(
-            "User Name",
-            style: TextStyle(
+            user.email.toString(),
+            style: const TextStyle(
               color: kText,
               fontSize: 23,
               fontWeight: FontWeight.bold,
